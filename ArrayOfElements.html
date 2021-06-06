@@ -1,0 +1,46 @@
+html>
+    <head>
+
+         <script> 
+//  I would have put the script tag before the closing body function so we wont have to worry about onload
+//  and maybe separate the JS in to a different file with using scr option for the script tag.
+      window.onload= function GetAllDescendants() // we could pass param of 'id'
+        {
+            let parent = document.getElementById(`bottomMenu`);
+            let children=Array.prototype.slice.call(parent.getElementsByTagName(`*`))
+            children.push(parent.tagName); // pushing the ul element in the array.
+            console.log(children); // printing the result 
+            return children; // returning the results in an array.
+            
+        }
+    
+
+        </script>
+    </head>
+    <body>
+        <h1>Sample page</h1>
+        <div id="row">
+            <div id="col1">
+                <h2>Section 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ipsum quam, condimentum ac pulvinar sed, luctus sed libero. Vestibulum vestibulum sodales tellus, sit amet placerat nulla venenatis non. Nunc facilisis est eget facilisis sollicitudin. Proin placerat mi eget consequat congue. </p>
+                <p>Pellentesque finibus convallis magna, in convallis sapien fermentum id. Quisque rutrum sapien at sagittis sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum a interdum felis. Vestibulum ac nunc vel turpis posuere venenatis a eu arcu. Morbi vulputate massa sit amet dui consectetur efficitur. Phasellus a lobortis enim. Mauris hendrerit consectetur orci eget scelerisque.</p>
+            </div>
+            <div id="col2">
+                <h2>Section 1</h2>
+                <p><a href="#">Lipsum dolor</a> sit amet, consectetur adipiscing elit. Nunc ipsum quam, condimentum ac pulvinar sed, luctus sed libero. Vestibulum vestibulum sodales tellus, sit amet placerat nulla venenatis non. Nunc facilisis est eget facilisis sollicitudin. Proin placerat mi eget consequat congue. </p>
+                <p>Pellentesque finibus convallis magna, in convallis sapien fermentum id. Quisque rutrum sapien at sagittis sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum a interdum felis. Vestibulum ac nunc vel turpis posuere venenatis a eu arcu. Morbi vulputate massa sit amet dui consectetur efficitur. Phasellus a lobortis enim. Mauris hendrerit consectetur orci eget scelerisque.</p>
+            </div>
+        </div>
+        <footer>
+            <ul id="bottomMenu">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </footer>
+ 
+    </body>
+</html>
